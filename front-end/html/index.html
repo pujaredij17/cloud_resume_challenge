@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <!-- Add some CSS to change client UI -->
+    <style>
+    body {
+        background-color: #232F3E;
+        }
+    label, button {
+        color: #FF9900;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <script>
+        let request = new XMLHttpRequest();
+    
+        request.open('GET', 'https://gqpp49ni5j.execute-api.us-east-1.amazonaws.com/Prod/counter', true);
+        request.setRequestHeader("Content-Type", "application/json");
+        // request.setRequestHeader("Access-Control-Allow-Origin", "*");
+        // request.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+        // request.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+        request.send();
+        request.onload = () => {
+            console.log(request);
+            if (request.readyState === request.DONE) {
+                if (request.status === 200) {
+                    document.getElementById("counter").innerHTML = '&nbsp;&nbsp;' + request.responseText + request.responseText + ' views&nbsp;&nbsp;';
+            } else {
+                console.log(`error ${request.status} ${request.statusText}`)
+            }
+          }
+        };
+    
+    </script>
+     
+    <div id="counter"></div> 
+    
+    </body>
+</html>
