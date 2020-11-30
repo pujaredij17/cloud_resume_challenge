@@ -35,7 +35,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       Cors:
-        AllowOrigin: "'http://d1hg85pd9j4a1a.cloudfront.net/index.html'"
+        AllowOrigin: "'dulpchs9918zr.cloudfront.net/index.html'"
       EndpointConfiguration: Regional
       OpenApiVersion: 3.0.1
       StageName: Prod
