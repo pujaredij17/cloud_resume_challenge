@@ -20,7 +20,7 @@ jobs:
         aws-region: us-east-1   
     
     - name: Sync resume to S3 bucket
-      run: aws s3 sync ../../fron-end/html s3://$AWS_S3_BUCKET --follow-symlinks
+      run: aws s3 sync ../../front-end/html s3://$AWS_S3_BUCKET --follow-symlinks
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
