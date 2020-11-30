@@ -11,8 +11,8 @@ phases:
   build:
     commands:
       - echo packaging project
-      - cfn-lint -t template.yml
-      - aws cloudformation package --template-file template.yml --s3-bucket ${PACKAGE_BUCKET} --output-template-file packaged-template.yml
+      - cfn-lint -t back-end/template.yml
+      - aws cloudformation package --template-file back-end/template.yml --s3-bucket ${PACKAGE_BUCKET} --output-template-file packaged-template.yml
       - echo testing project
       - aws lambda invoke --function-name ResumeFunction --payload tests/test-payload.json tests/test-output.txt --query 'LogResult' | tr -d '"' | base64 --decode
       - echo passing off to CodeDeploy for stack creation
