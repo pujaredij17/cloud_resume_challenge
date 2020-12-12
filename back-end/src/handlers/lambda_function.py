@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "isBase64Encoded": False,
         "headers": {
-            "Access-Control-Allow-Origin": "https://cloud-resume-challenge-s3-bucket.s3.amazonaws.com"
+            "Access-Control-Allow-Origin": "http://dulpchs9918zr.cloudfront.net"
         },
         "body": json.dumps(item['Item']['counter_value'], indent=4, cls=DecimalEncoder)
     }
