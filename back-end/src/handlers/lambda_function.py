@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "isBase64Encoded": False,
         "headers": {
-            "Access-Control-Allow-Origin": "http://onlineresumeprofile.s3-website-us-east-1.amazonaws.com"
+            "Access-Control-Allow-Origin": "http://dulpchs9918zr.cloudfront.net/index.html"
         },
         "body": json.dumps(item['Item']['counter_value'], indent=4, cls=DecimalEncoder)
     }
